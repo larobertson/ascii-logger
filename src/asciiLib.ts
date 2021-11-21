@@ -2,20 +2,36 @@
   
 // }
 
-const owl = (): string => {
+const owl = (): Array<string> => {
   const owlBlocks: string[] = [
     " /\\_/\\ ",
     "((@v@))",
     "():::()",
     " VV-VV ",
   ];
-  let owlArt: string = '';
-  for (let i = 0; i < owlBlocks.length; i++) {
-    owlArt += `${owlBlocks[i]}\n`;
-  }
-  return owlArt;
+  return owlBlocks;
+};
+
+const eagle = (): Array<string> => {
+  const eagleBlocks: string[] = [
+    "     .---.        .-----------",
+    "    /     \  __  /    ------",
+    "  / /     \(  )/    -----",
+    " //////   ' \/ `   ---",
+    "//// / // :    : ---",
+    "// /   /  /`    '--",
+    "//          //..\\",
+    "      ====UU====UU====",
+    "          '//||\\`",
+    "            ''``",
+    "      Daron Brewood",
+  ];
+  return eagleBlocks;
 };
 
 export const asciiLib = {
-  owl: owl(),
+  owl,
+  eagle,
 };
+
+
