@@ -6,6 +6,4 @@ const drawAscii = (artBlocks: Array<string>): string => {
   return asciiArt;
 };
   
-  export const asciiLib = {
-    drawAscii,
-  };
+export default drawAscii;
