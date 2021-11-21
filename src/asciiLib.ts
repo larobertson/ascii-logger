@@ -255,6 +255,79 @@ const camel = (): Array<string> => {
   return camelBlock;
 };
 
+const star = (): Array<string> => {
+  const starBlock: string[] = [
+  "     ,",
+  "  __/ \\__",
+  "  \\     /",
+  "  /_   _\\",
+  "    \\ /",
+  "     '",
+  ];
+  return starBlock;
+};
+
+const moon = (): Array<string> => {
+  const moonBlock: string[] = [
+  "          _.._",
+  "        .' .-'`",
+  "      /  /",
+  "      |  |",
+  "      \\  '.___.;",
+  "jgs     '._  _.'",
+  "          ``",
+  ];
+  return moonBlock;
+};
+
+const ufo = (): Array<string> => {
+  const ufoBlock: string[] = [
+    "     ___",
+    "  ___/   \\___",
+    " /   '---'   \\",
+    " '--_______--'",
+    "      / \\",
+    "     /   \\",
+    "     /\\O/\\",
+    "     / | \\",
+    "     // \\\\",
+  ];
+  return ufoBlock;
+};
+
+const toTheMoon = (): Array<string> => {
+  const toTheMoonBlock: string[] = [
+"         ___---___                    ",
+"      .--         --.      ",
+"    ./   ()      .-. \\.",
+"   /   o    .   (   )  \\",
+"  / .            '-'    \\         ",
+" | ()    .  O         .  |      ",
+"|                         |      ",
+"|    o           ()       |",
+"|       .--.          O   |            ",
+" | .   |    |            |",
+"  \\    `.__.'    o   .  /    ",
+"   \\                   /                   ",
+"    `\\  o    ()      /' JT/jgs         ",
+"      `--___   ___--'",
+"            ---",
+"\n",
+"\n",
+"\n",
+"                  .    To the Moon!",
+"                 .'.",
+"                 |o|",
+"                .'o'.",
+"                |.-.|",
+"                '   '",
+"                 ( )",
+"                  )",
+"                 ( )",
+  ];
+  return toTheMoonBlock;
+};
+
 const template = (): Array<string> => {
   const Block: string[] = [
     ""
@@ -277,7 +350,11 @@ export const asciiLib = {
   alleyCats,
   sleepyCat,
   cat,
-  camel, 
+  camel,
+  star,
+  moon,
+  ufo,
+  toTheMoon,
 };
 
 
