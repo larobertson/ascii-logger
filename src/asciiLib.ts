@@ -358,6 +358,30 @@ const batman = (): Array<string> => {
   return batmanBlock;
 };
 
+const train = (): Array<string> => {
+  const trainBlock: string[] = [
+  "    _____                 . . . . . o o o o o",
+  "  __|[_]|__ ___________ _______    ____      o",
+  " |[] [] []| [] [] [] [] [_____(__  ][]]_n_n__][.",
+  "_|________|_[_________]_[________]_|__|________)<",
+  "  oo    oo 'oo      oo ' oo    oo 'oo 0000---oo\\_",
+  " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+  ];
+  return trainBlock;
+};
+
+const chopper = (): Array<string> => {
+  const chopperBlock: string[] = [
+    "---------------+---------------",
+    "         ___ /^^[___              _",
+    "        /|^+----+   |#___________//",
+    "      ( -+ |____|    ______-----+/",
+    "       ==_________--'            \\",
+    "         ~_|___|__",
+  ];
+  return chopperBlock;
+};
+
 const template = (): Array<string> => {
   const Block: string[] = [
     ""
@@ -387,6 +411,8 @@ export const asciiLib = {
   toTheMoon,
   cactus,
   batman,
+  train,
+  chopper,
 };
 
 
