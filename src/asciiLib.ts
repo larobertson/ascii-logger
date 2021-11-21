@@ -29,9 +29,46 @@ const eagle = (): Array<string> => {
   return eagleBlocks;
 };
 
+const cow = (): Array<string> => {
+  const cowBlocks: string[] = [
+    " \|/          (__)    ",
+    "      `\------(oo)",
+    "        ||    (__)",
+    "        ||w--||     \|/",
+    "    \|/"
+  ];
+  return cowBlocks;
+};
+
+const cowWithBell = (): Array<string> => {
+  const cowWithBellBlocks: string[] = [
+    "      Art by Joan Stark",
+    "            .=     ,        =.",
+    "    _  _   /'/    )\\,/,/(_   \\ \\",
+    "    `//-.|  (  ,\\\)\\//\\)\/_  ) |",
+    "    //___\\   `\\\\\\/\\\/\\/\\\\///'  /",
+    "  ,-\"~`-._ `\"--'_   `\"\"\"`  _ \`'\"~-,_",
+    "  \\       `-.  '_`.      .'_` \\ ,-\"~`/",
+    "  `.__.-'`/   (-\\        /-) |-.__,'",
+    "    ||   |     \\O)  /^\\ (O/  |",
+    "    `\\\\  |         /   `\\    /",
+    "      \\\\  \\       /      `\\ /",
+    "        `\\\\ `-.  /' .---.--.\\",
+    "          `\\\/`~(, '()      ('",
+    "          /(O) \\\\   _,.-.,_)",
+    "          //  \\\\ `\\'`      /",
+    "    jgs  / |  ||   `\"\"\"\"~\"`",
+    "      /'  |__||",
+    "            `o",
+  ];
+  return cowWithBellBlocks;
+}
+
 export const asciiLib = {
   owl,
   eagle,
+  cow,
+  cowWithBell,
 };
 
 
