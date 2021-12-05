@@ -1,5 +1,3 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 import * as _ from 'lodash'
 import {asciiLib} from './asciiLib';
@@ -11,14 +9,9 @@ const isUpperCase = (str: string) => {
     return true;
   }
   return false;
-}
+};
 
 const formatLabels = (keyName: string) => {
-  // iterate over the string
-    // create a new string where:
-      // capitalize the first character
-      // each time we encounter an uppercase character splice in a space before the uppercase char
-  // return new string
   let labelName: string = '';
   for (const letter of keyName) {
     if (labelName === '') {
@@ -32,8 +25,7 @@ const formatLabels = (keyName: string) => {
   return labelName;
 };
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
+
 export function activate(context: vscode.ExtensionContext) {
   const asciiDrawings = _.map(asciiLib, (value:Function, key:string) => {
     return {
