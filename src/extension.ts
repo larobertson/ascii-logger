@@ -6,13 +6,38 @@ import {asciiLib} from './asciiLib';
 import drawAscii from './drawAscii';
 
 
+const isUpperCase = (str: string) => {
+  if (str === str.toUpperCase()) {
+    return true;
+  }
+  return false;
+}
+
+const formatLabels = (keyName: string) => {
+  // iterate over the string
+    // create a new string where:
+      // capitalize the first character
+      // each time we encounter an uppercase character splice in a space before the uppercase char
+  // return new string
+  let labelName: string = '';
+  for (const letter of keyName) {
+    if (labelName === '') {
+      labelName += letter.toUpperCase();
+    } else if (isUpperCase(letter)) {
+      labelName += ` ${letter}`;
+    } else {
+      labelName += letter;
+    }
+  }
+  return labelName;
+};
+
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
   const asciiDrawings = _.map(asciiLib, (value:Function, key:string) => {
     return {
-      label: key,
-      detail: key,
+      label: formatLabels(key),
       fn: () => {return drawAscii(value())},
     };
   });

@@ -382,12 +382,12 @@ const chopper = (): Array<string> => {
   return chopperBlock;
 };
 
-const template = (): Array<string> => {
-  const Block: string[] = [
-    ""
-  ];
-  return Block;
-};
+// const template = (): Array<string> => {
+//   const Block: string[] = [
+//     ""
+//   ];
+//   return Block;
+// };
 
 export const asciiLib = {
   owl,

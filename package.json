@@ -18,11 +18,11 @@
     "commands": [
       {
         "command": "ascii-logger.draw",
-        "title": "ASCII Snippet"
+        "title": "ASCII String"
       },
       {
         "command": "ascii-logger.log",
-        "title": "ASCII String"
+        "title": "ASCII Snippet"
       }
     ]
   },
