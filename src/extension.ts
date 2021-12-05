@@ -1,6 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import * as _ from 'lodash'
 import {asciiLib} from './asciiLib';
 import drawAscii from './drawAscii';
 
@@ -8,23 +9,32 @@ import drawAscii from './drawAscii';
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-	
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "ascii-logger" is now active!');
+  const asciiDrawings = _.map(asciiLib, (value:Function, key:string) => {
+    return {
+      label: key,
+      detail: key,
+      fn: () => {return drawAscii(value())},
+    };
+  });
+  console.log('asciiDrwings', asciiDrawings);
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('ascii-logger.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-    console.log(asciiLib.owl);
-		vscode.window.showInformationMessage(drawAscii(asciiLib.owl()));
+	
+
+	let disposable = vscode.commands.registerCommand('ascii-logger.draw', async () => {
+    const drawing = await vscode.window.showQuickPick(asciiDrawings, {matchOnDetail: true});
+    if (!vscode.window.activeTextEditor) {
+      return; // no editor
+    }
+    const editor = vscode.window.activeTextEditor;
+    const ascii = new vscode.SnippetString(drawing?.fn());
+    editor.insertSnippet(ascii);
+    // console.log('methods on vscode.window.activeTextEditor', vscode.window.activeTextEditor);
+    // // if (document.uri.scheme !== myScheme) {
+    // //   return; // not my scheme
+    // // }
 	});
 
 	context.subscriptions.push(disposable);
 }
 
-// this method is called when your extension is deactivated
 export function deactivate() {}
