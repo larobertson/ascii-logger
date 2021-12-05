@@ -10,14 +10,19 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:ascii-logger.helloWorld"
+    "onCommand:ascii-logger.draw",
+    "onCommand:ascii-logger.log"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "ascii-logger.helloWorld",
-        "title": "Hello World"
+        "command": "ascii-logger.draw",
+        "title": "ASCII Snippet"
+      },
+      {
+        "command": "ascii-logger.log",
+        "title": "ASCII String"
       }
     ]
   },
@@ -31,6 +36,7 @@
   },
   "devDependencies": {
     "@types/glob": "^7.1.4",
+    "@types/lodash": "^4.14.177",
     "@types/mocha": "^9.0.0",
     "@types/node": "14.x",
     "@types/vscode": "^1.62.0",
@@ -39,6 +45,7 @@
     "@vscode/test-electron": "^1.6.2",
     "eslint": "^8.1.0",
     "glob": "^7.1.7",
+    "lodash": "^4.17.21",
     "mocha": "^9.1.3",
     "typescript": "^4.4.4"
   }
